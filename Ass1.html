@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ITE One-Page Site</title>
+
+        <!-- Bootstrap 5 CSS (CDN) -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <style>
+            *{
+                box-sizing: border-box;
+                padding: 0px;
+                margin: 0px;
+            }
+            /* Minimal enhancements using only CSS (no external libraries) */
+a{
+      text-decoration: none;
+      color: black;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+    }
+a.animate:hover{
+      color: #2ecc71;
+      transition: all 0.2s ease-in-out;
+    }
+a.animate::after{
+    Content: "";
+    position: absolute;
+    background-color:#2ecc71;
+    transition: all 0.3s ease-in-out;
+    width: 0px;
+    height: 2px;
+    left: 1px;
+    top: 25px;
+}
+a:not(.animate):hover{
+  color: #2ecc71;
+}
+a.animate:hover::after{
+    width: 100%;
+    transition: all 0.1s ease-out;
+}
+            .hero {
+                background: linear-gradient(135deg, #000000 0%, #007d26 100%);
+                color: #fff;
+                padding: 6rem 0 5rem;
+            }
+            .feature-icon {
+                width: 3rem; height: 3rem; border-radius: .75rem;
+                display: inline-flex; align-items: center; justify-content: center;
+                background: rgba(1, 5, 11, 0.1); color:#000000; font-size:1.5rem;
+            }
+            .nav-link { cursor: pointer; }
+            /* Smooth scroll (CSS only) */
+            html { scroll-behavior: smooth; }
+            li{
+                list-style: none;
+            }
+            ul{
+                display:flex ;
+                gap: 30px;
+            }
+            p{
+                color: #000000;
+            }
+                .list-drop{
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content{
+      display: none;
+      position: absolute;
+      background-color: #fff;
+
+      box-shadow: 0px 8px 16px rgba(0, 0, 0,0.2);
+      z-index: 100;
+    }
+    .dropdown-content a{
+      color: #341e1e;
+      padding:  12px 16px;
+      display: block;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover{
+      background-color: #f1f1f1;
+    }
+    .list-drop:hover .dropdown-content{
+      display: block;
+    }
+    .movie-card {
+  width: 260px;
+  height: 330px;
+  border-radius: 12px;
+  background-color: #fff; /* or your preferred background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+        </style>
+    </head>
+    <body>
+        <!-- ====== NAVBAR ====== -->
+        <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                    <span class="fw-bold">ITE Cineplix</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="mainNav" class="collapse navbar-collapse" style="display: flex;justify-content: space-around;align-items: center;">
+                    <div class="navmenu" >
+                    <ul class="navbar-nv" style="display: flex;justify-content: space-around;align-items: center;">
+                        <li style="list-style: none;">
+                            <a href="#home" class="animate">
+                                Home
+                            </a>
+                        </li>
+                        <li class="list-drop">
+                            <a href="#" class="animate">Collection</a>
+                            <div class="dropdown-content">
+                                <a  href="#horror">Horror</a>
+                                <a href="#anime">Anime</a>
+                                <a  href="#action">Action</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="./about.html" class="animate">
+                                About us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./contact.html" class="animate">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="home" class="d-flex justify-content-center container-fluid p-0">
+        <div style="width: 100%;">
+         <div id="mySlide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div style="width: 100%;" class="carousel-inner">
+           <div class="carousel-item active">
+              <img style="height: 500px;width: 100%;" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/989f6645-017e-49f7-afac-61cd75282460/dlfbloz-c575e8db-9f25-4601-81c4-2f92050b9f1d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi85ODlmNjY0NS0wMTdlLTQ5ZjctYWZhYy02MWNkNzUyODI0NjAvZGxmYmxvei1jNTc1ZThkYi05ZjI1LTQ2MDEtODFjNC0yZjkyMDUwYjlmMWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Too5OXzpTAUia9RpoWnWVvyZt9WEnjvy8P-I-Jme6_w" alt="">
+           </div>
+           <div class="carousel-item">
+              <img style="height: 500px;width: 100%;" src="https://preview.redd.it/new-promo-banner-for-superman-2025-v0-3ncbg0g4tz2f1.jpeg?width=640&crop=smart&auto=webp&s=7f841f6595d1ee86fe6f9cacf391107c3a319cb2" alt="">
+           </div>
+           <div class="carousel-item">
+              <img style="height: 500px;width: 100%;" src="https://images7.alphacoders.com/140/thumb-1920-1406139.jpg" alt="">
+           </div>
+        </div>
+        <button class="carousel-control-prev d-flex justify-content-start" data-bs-target="#mySlide" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next d-flex justify-content-end" data-bs-target="#mySlide" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+       </div>
+       </div>
+
+       
+    </div>
+    <h1 class="content1 d-flex justify-content-center align-items-center p-5">Horror</h1>
+    <div id="horror" class="content1 d-flex justify-content-center align-items-center">
+
+        <div class="container-fluid" style="background-color: #ffffff;width: 88%;height: 300px;">
+            <div class="row">
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://www.sonypictures.ca/sites/canada/files/2025-07/DP_9794107_28YEARSLATER_2000x3000_HEKeyArt_1333x2000_thumbnail-min.jpg'); background-size: cover; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://preview.redd.it/official-poster-for-scream-7-v0-orxyx5ovy8yf1.jpeg?auto=webp&s=2da131e6e5db1f0e7c1f64d9f0143b6788f80ff1'); background-size: cover; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://i.ebayimg.com/00/s/MTYwMFgxMDg2/z/qHwAAOSw1Y5dcuMC/$_57.JPG?set_id=8800005007'); background-size: cover; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://www.tallengestore.com/cdn/shop/products/TheConjuring2-HollywoodEnglishHorrorMoviePoster_943331c2-7090-4faa-9c72-bb87711c7235.jpg?v=1625220791'); background-size: cover; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLIUau1XMCaYLkWJ5-4o7gsO5GecB9rTdmMLSFq21_nO-JfVwggjFyvPM&s=10'); background-size: cover; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://www.chosun.com/resizer/v2/GY3DSNDBGFRGCNRZGIYDGODDGI.jpg?auth=eb73ac7f566180ed63b5bf328ca148e66cc9de43f01010ea26f9b38b6789421e&width=530&height=756&smart=true'); background-size: cover; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <h1 id="anime" class="content1 d-flex justify-content-center align-items-center p-5">Anime</h1>
+    <div id="" class="content1 d-flex justify-content-center align-items-center">
+
+        <div class="container-fluid" style="background-color: #ffffff;width: 88%;height: 300px;">
+            <div class="row">
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://i.redd.it/0u2aefrzacmc1.jpeg'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://m.media-amazon.com/images/M/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_.jpg'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://m.media-amazon.com/images/M/MV5BOWQwOWY5NTUtMjAyZi00YjQzLTkwODgtNmQwZjU1MGIzZDhjXkEyXkFqcGc@._V1_.jpg'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://static0.cbrimages.com/wordpress/wp-content/uploads/sharedimages/2025/06/0334030_poster_w780.jpg?q=50&fit=contain&w=480&dpr=1.5'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/vinland_saga_anime.png'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQSHBQVhtjd1LYiSNxPN9bLPFlbDo3swK9G6TivIEAPysUo0_-cJ57S-EcafNC0_0O4vQD7HGMJIUvoPeWmgZfbLDxVyyPdzBx19T8i2cS8YVyaQmeUx7uvrraloCJdNI2SJ4QSMUe9W1oWEqzXm91x57.jpg?r=776'); background-size: 100% 100% ; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <h1 id="action" class="content1 d-flex justify-content-center align-items-center p-5">Action</h1>
+   <div id="" class="content1 d-flex justify-content-center align-items-center">
+
+        <div class="container-fluid" style="background-color: #ffffff;width: 88%;height: 300px;">
+            <div class="row">
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://cdn.europosters.eu/image/1300/133030.jpg'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://m.media-amazon.com/images/I/51lnnABO7BL._AC_UF894,1000_QL80_.jpg'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBDo7r6SHdpKcA490JbyYRQw2rUIM3xhsGHDLsfJWmL5qfRHLahxrfNC8&s=10'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://i.pinimg.com/736x/83/96/46/8396468c806103847116c0a2ad07c390.jpg'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-WCgXfWtuUEFrXD3hCbzBzjgpa1QeoDkgVCqESEdt78gV5kvnx9LUKmY&s=10'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <div class="movie-card d-flex flex-column justify-content-center align-items-center">
+                        <div style="width: 100%; height: 90%; border-radius: 12px 12px 0px 0px;">
+                            <div style="width: 100%; height: 100%; border-radius: 12px 12px 0 0; background-image: url('https://m.media-amazon.com/images/I/71-sziO1OsL._AC_UF894,1000_QL80_.jpg'); background-size: 100% 100%; background-repeat: no-repeat;"></div>
+                         </div>
+                        <div class="pt-2">
+                            <a href=""><p>28 Years Later</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        <footer style="width:100%; background-color:#121212; color:white; margin-top:100px; padding:50px 0;">
+    <div style="width:80%; margin:auto; display:flex; justify-content:space-between; flex-wrap:wrap;">
+
+        <!-- Brand -->
+        <div>
+            <h2 style="color:#E50914;">Movie Cinema</h2>
+            <p style="color:#B3B3B3;">
+                Experience the latest blockbusters, exclusive screenings,
+                and unforgettable movie nights.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3>Quick Links</h3>
+            <ul style="list-style:none; padding:0; color:#B3B3B3;">
+                <li><a href="#" style="color:#B3B3B3; text-decoration:none;">Home</a></li>
+                <li><a href="#" style="color:#B3B3B3; text-decoration:none;">Movies</a></li>
+                <li><a href="#" style="color:#B3B3B3; text-decoration:none;">Coming Soon</a></li>
+                <li><a href="#" style="color:#B3B3B3; text-decoration:none;">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h3>Contact Us</h3>
+            <p style="color:#B3B3B3;">📍 Phnom Penh, Cambodia</p>
+            <p style="color:#B3B3B3;">📞 +855 12 345 678</p>
+            <p style="color:#B3B3B3;">✉ info@moviecinema.com</p>
+        </div>
+
+    </div>
+
+    <hr style="border:1px solid #333; margin:30px 10%;">
+
+    <p style="text-align:center; color:#B3B3B3;">
+        © 2026 Movie Cinema. All Rights Reserved.
+    </p>
+</footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>
